@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health - الرئيسية</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* قائمة التنقل */
+        nav {
+            position: absolute;
+            top: 20px;
+            background: white;
+            padding: 10px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #2c3e50;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: #27ae60; }
+
+        /* حاوية الترحيب */
+        .welcome-container {
+            text-align: center;
+            background: white;
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+            max-width: 550px;
+            width: 90%;
+        }
+
+        .welcome-image img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 20px;
+            margin-bottom: 25px;
+        }
+
+        h1 { color: #2c3e50; font-size: 2.5rem; margin-bottom: 5px; }
+        h1 span { color: #27ae60; }
+        h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        p { color: #7f8c8d; font-size: 1.1rem; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="assistant.html">المساعد الذكي</a>
+        <a href="about.html">عن الموقع</a>
+        <a href="tips.html">نصائح صحية</a>
+        <a href="emergecy.html">الطوارئ</a>
+    </nav>
+
+    <div class="welcome-container">
+        <div class="welcome-image">
+            <img src="hero-health.jpg" alt="Smart Health Logo">
+        </div>
+
+        <div class="welcome-text">
+            <h1>أهلاً بكِ في <span>Smart Health</span> ✨</h1>
+            <h3 style="color: #27ae60; margin-top: 0; font-weight: 600;">
+                نبض الرعاية الإنسانية.. بذكاء التكنولوجيا الرقمية
+            </h3>
+            <p>رفيقكِ الدائم لحياة صحية ذكية ومليئة بالحيوية.</p>
+        </div>
+    </div>
+
+</body>
+</html>
