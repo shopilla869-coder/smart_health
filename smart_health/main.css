@@ -1,0 +1,141 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #0078d4;
+    color: white;
+    padding: 20px;
+}
+nav {
+    background: #2b3e50;
+    padding: 15px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+nav a:hover {
+    color: #00d4ff;
+}
+.container {
+    padding: 40px;
+    background: white;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.habit-tracker {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+.tracker-header h2 { color: #27ae60; margin-bottom: 5px; }
+
+/* شريط التقدم */
+.progress-container {
+    background-color: #eee;
+    border-radius: 20px;
+    margin: 25px 0;
+    height: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    height: 100%;
+    width: 0%; /* بيتغير بالـ JS */
+    color: white;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    transition: width 0.5s ease-in-out;
+}
+
+/* شبكة العادات */
+.habits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    background: #fdfdfd;
+    padding: 18px;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.habit-item:hover { background: #f0fff4; border-color: #2ecc71; }
+
+.habit-item input { margin-left: 15px; width: 20px; height: 20px; cursor: pointer; }
+
+.status-message {
+    margin-top: 25px;
+    font-weight: bold;
+    color: #555;
+    font-size: 18px;
+}
+img {
+    max-width: 150px; /* صغري الرقم ده لحد ما الحجم يظبط معاكي */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* عشان يجي في النص ويبعد عن الكلام */
+}
+/* تنسيق صفحة التحدي */
+.challenge-container {
+    max-width: 1000px;
+    margin: 100px auto 40px;
+    padding: 20px;
+}
+
+.challenge-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.challenge-header h1 {
+    font-size: 48px; /* الخط الكبير جداً */
+    color: #2c3e50;
+}
+
+.habits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.habit-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.habit-card:hover {
+    border-color: #2ecc71;
+    transform: translateY(-5px);
+}
+
+.habit-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
