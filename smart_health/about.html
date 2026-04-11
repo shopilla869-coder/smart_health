@@ -2,38 +2,59 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>عن المشروع - Smart Health</title>
+    <title>مركز الطوارئ - Smart Health</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
+        .emergency-container { max-width: 900px; margin: 40px auto; padding: 20px; }
+        .emergency-title { color: #d9534f; text-align: center; margin-bottom: 30px; border-bottom: 2px solid #d9534f; padding-bottom: 10px; }
+        
+        /* الكروت المنظمة */
+        .aid-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .aid-card { background: white; padding: 20px; border-radius: 15px; border-top: 5px solid #007bff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .aid-card:hover { transform: translateY(-5px); }
+        
+        /* الأيقونات الزرقاء */
+        .icon-box { color: #007bff; font-size: 24px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .aid-card h3 { margin: 0; font-size: 20px; color: #333; }
+        .aid-card ul { padding-right: 20px; color: #555; line-height: 1.7; }
+        .aid-card li { margin-bottom: 8px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h2>Smart Health Assistant</h2>
-    </header>
-
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="assistant.html">المساعد الذكي</a>
-        <a href="about.html">عن المشروع</a>
-        <a href="tips.html">نصائح صحية</a>
-    </nav>
-
-    <div class="container">
-        <h1>عن المساعد الصحي الذكي 💡</h1>
-        <p style="line-height: 1.8; color: #555;">
-            هذا الموقع هو مشروع تعليمي يهدف إلى دمج التكنولوجيا بالرعاية الصحية. 
-            نحن نؤمن أن الوصول إلى المعلومة الصحية الصحيحة هو أول خطوة لحياة أفضل.
-        </p>
-
-        <div style="margin-top: 30px;">
-            <img src="images\health.jpg.jpg" alt="Health Background" style="width: 100%; max-width: 600px; border-radius: 15px; border: 3px solid #0078d4;">
+<div class="emergency-container">
+    <h1 class="emergency-title">🚨 دليل التصرف السريع للطوارئ</h1>
+    
+    <div class="aid-grid">
+        <div class="aid-card">
+            <div class="icon-box">🔵 <h3>الإغماء</h3></div>
+            <ul>
+                <li>تأكد من تنفس الشخص بانتظام.</li>
+                <li>ضعه في وضعية الإفاقة (على جانبه).</li>
+                <li>ارفع قدميه قليلاً عن مستوى الأرض.</li>
+            </ul>
         </div>
 
-        <div style="margin-top: 20px; font-style: italic; color: #0078d4;">
-            "صحتك أمانة.. والتكنولوجيا وسيلة للحفاظ عليها"
+        <div class="aid-card">
+            <div class="icon-box">🔵 <h3>النزيف</h3></div>
+            <ul>
+                <li>اضغط بقوة على الجرح بقطعة قماش نظيفة.</li>
+                <li>ارفع العضو المصاب أعلى من مستوى القلب.</li>
+                <li>لا تنزع القماش إذا تشبع بالدم، بل ضع فوقه طبقة أخرى.</li>
+            </ul>
+        </div>
+
+        <div class="aid-card">
+            <div class="icon-box">🔵 <h3>الإنعاش (CPR)</h3></div>
+            <ul>
+                <li>تأكد من طلب الإسعاف فوراً (123).</li>
+                <li>ابدأ بضغطات الصدر في المنتصف (100 ضغطة/دقيقة).</li>
+                <li>استمر حتى وصول الفريق الطبي.</li>
+            </ul>
         </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
 </body>
 </html>
