@@ -2,42 +2,177 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <title>مركز الطوارئ - Smart Health</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل التصرف السريع للطوارئ - Smart Health</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        body { background-color: #f4f7f6; font-family: 'Segoe UI', sans-serif; }
-        .emergency-container { max-width: 900px; margin: 40px auto; padding: 20px; }
-        .emergency-title { color: #d9534f; text-align: center; margin-bottom: 30px; border-bottom: 2px solid #d9534f; padding-bottom: 10px; }
+        /* إعدادات الصفحة الأساسية */
+        :root {
+            --primary-color: #e74c3c; /* أحمر للطوارئ */
+            --secondary-color: #3498db; /* أزرق للأقسام */
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+        }
+
+        /* حاوية التصميم الرئيسية */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        /* العنوان الرئيسي */
+        .main-header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        .emergency-icon {
+            font-size: 1.5em;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        /* شبكة الأقسام (توزيع تلقائي 3 في الصف أو 2 في الموبايل) */
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* تصميم الكارت الواحد */
+        .emergency-section {
+            border: 1px solid #e1e8ed;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .emergency-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* عنوان الكارت مع الأيقونة الزرقاء */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid #ebf2f7;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .title-icon {
+            font-size: 1.5em;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 1.4em;
+            font-weight: 700;
+        }
+
+        /* قائمة الخطوات */
+        .emergency-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .emergency-section li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 1.05em;
+        }
+
+        /* الدائرة الزرقاء (Bullet Point) */
+        .emergency-section li::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        /* تنسيق خاص للتنبيهات (مثل "اتصل بـ 123") */
+        .alert-text {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
         
-        /* الكروت المنظمة */
-        .aid-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .aid-card { background: white; padding: 20px; border-radius: 15px; border-top: 5px solid #007bff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
-        .aid-card:hover { transform: translateY(-5px); }
-        
-        /* الأيقونات الزرقاء */
-        .icon-box { color: #007bff; font-size: 24px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .aid-card h3 { margin: 0; font-size: 20px; color: #333; }
-        .aid-card ul { padding-right: 20px; color: #555; line-height: 1.7; }
-        .aid-card li { margin-bottom: 8px; }
+        .cpr-rate {
+            font-weight: bold;
+            color: #27ae60; /* أخضر للمعدلات الرقمية */
+        }
+        /* تنسيق التنبيه التحذيري (للأشياء التي لا يجب فعلها) */
+        .danger-alert {
+            background-color: #fff5f5;
+            border-right: 4px solid var(--primary-color);
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .danger-alert i {
+            color: var(--primary-color);
+            margin-left: 5px;
+        }
+
     </style>
 </head>
 <body>
 
-<div class="emergency-container">
-    <h1 class="emergency-title">🚨 دليل التصرف السريع للطوارئ</h1>
+<div class="container">
     
-    <div class="aid-grid">
-        <div class="aid-card">
-            <div class="icon-box">🔵 <h3>الإغماء</h3></div>
-            <ul>
-                <li>تأكد من تنفس الشخص بانتظام.</li>
-                <li>ضعه في وضعية الإفاقة (على جانبه).</li>
-                <li>ارفع قدميه قليلاً عن مستوى الأرض.</li>
-            </ul>
-        </div>
+    <div class="main-header">
+        <h1>
+            <i class="fas fa-bell emergency-icon"></i>
+            دليل التصرف السريع للطوارئ
+        </h1>
+    </div>
 
-        <div class="aid-card">
-            <div class="icon-box">🔵 <h3>النزيف</h3></div>
+    <div class="emergency-grid">
+        
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-droplet title-icon"></i>
+                <h2>النزيف</h2>
+            </div>
             <ul>
                 <li>اضغط بقوة على الجرح بقطعة قماش نظيفة.</li>
                 <li>ارفع العضو المصاب أعلى من مستوى القلب.</li>
@@ -45,15 +180,71 @@
             </ul>
         </div>
 
-        <div class="aid-card">
-            <div class="icon-box">🔵 <h3>الإنعاش (CPR)</h3></div>
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-user-slash title-icon"></i>
+                <h2>الإغماء</h2>
+            </div>
             <ul>
-                <li>تأكد من طلب الإسعاف فوراً (123).</li>
-                <li>ابدأ بضغطات الصدر في المنتصف (100 ضغطة/دقيقة).</li>
+                <li>تأكد من تنفس الشخص بانتظام.</li>
+                <li>ضعه في وضعية الإفاقة (على جانبه).</li>
+                <li>ارفع قدميه قليلاً عن مستوى الأرض.</li>
+            </ul>
+        </div>
+
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-heartbeat title-icon"></i>
+                <h2>الإنعاش القلبي (CPR)</h2>
+            </div>
+            <ul>
+                <li>تأكد من طلب الإسعاف فوراً <span class="alert-text">(123)</span>.</li>
+                <li>ابدأ بضغطات الصدر في المنتصف (<span class="cpr-rate">100 ضغطة/دقيقة</span>).</li>
                 <li>استمر حتى وصول الفريق الطبي.</li>
             </ul>
         </div>
+
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-fire-flame-curved title-icon"></i>
+                <h2>الحروق</h2>
+            </div>
+            <ul>
+                <li>ضع الجزء المصاب تحت ماء جاري فاتر لمدة 10-20 دقيقة.</li>
+                <li>غطي الحرق بضمادة معقمة غير لاصقة (أو بلاستيك رقيق).</li>
+                <div class="danger-alert">
+                    <i class="fas fa-ban"></i>
+                    <strong>تحذير:</strong> لا تضع الثلج أو الزبدة أو معجون الأسنان على الحرق.
+                </div>
+            </ul>
+        </div>
+
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-lungs title-icon"></i>
+                <h2>الاختناق (الشّرقة)</h2>
+            </div>
+            <ul>
+                <li>شجع المصاب على السعال بقوة لإخراج الجسم الغريب.</li>
+                <li>إذا لم يستطع، قف خلفه وقم بعمل ضغطات البطن (مناورة هيمليك).</li>
+                <li>كرر الضغطات حتى يخرج الجسم أو يفقد المصاب الوعي (ابدأ CPR حينها).</li>
+            </ul>
+        </div>
+
+        <div class="emergency-section">
+            <div class="section-title">
+                <i class="fas fa-bone title-icon"></i>
+                <h2>الكسور</h2>
+            </div>
+            <ul>
+                <li>لا تحرك العضو المصاب مطلقاً لتجنب تضاعف الإصابة.</li>
+                <li>قم بتثبيت الكسر باستخدام "جبيرة" مؤقتة (خشب أو كرتون مقوى).</li>
+                <li>ضع كمادات باردة لتقليل التورم والألم لحين وصول الإسعاف.</li>
+            </ul>
+        </div>
+
     </div>
+
 </div>
 
 </body>
