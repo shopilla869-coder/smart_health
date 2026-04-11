@@ -91,3 +91,24 @@ nav a:hover {
     color: #555;
     font-size: 18px;
 }
+img {
+    max-width: 150px; /* صغري الرقم ده لحد ما الحجم يظبط معاكي */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* عشان يجي في النص ويبعد عن الكلام */
+}
+.emergency-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 15px;
+    padding: 10px;
+}
+
+.emergency-section {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: right; /* عشان الكلام يبقى مظبوط لغة عربية */
+}
