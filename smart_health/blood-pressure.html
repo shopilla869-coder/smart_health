@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BP Smart - جهاز قياس الضغط المطور</title>
+    <style>
+        :root {
+            --main-blue: #0052cc;
+            --dark-blue: #0a1931;
+            --bg-light: #f9fbff;
+            --text-gray: #555;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background-color: white; color: #333; }
+
+        /* الهيدر */
+        header { display: flex; justify-content: space-between; padding: 20px 5%; align-items: center; border-bottom: 1px solid #eee; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--text-gray); font-size: 14px; }
+        .logo { font-weight: bold; color: var(--main-blue); display: flex; align-items: center; }
+
+        /* قسم البداية (Hero) */
+        .hero { display: flex; padding: 60px 8%; align-items: center; background: #fff; gap: 40px; }
+        .hero-text { flex: 1; }
+        .hero-text h1 { color: var(--dark-blue); font-size: 36px; line-height: 1.4; }
+        .hero-text p { color: var(--text-gray); margin: 20px 0; }
+        .hero-image { flex: 1; text-align: center; }
+        .hero-image img { width: 100%; max-width: 450px; border-radius: 20px; }
+        .btn-blue { background: var(--main-blue); color: white; padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; }
+
+        /* قسم المميزات */
+        .section-title { text-align: center; margin: 50px 0 30px; color: var(--dark-blue); }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 0 8%; }
+        .card { background: var(--bg-light); padding: 30px; border-radius: 15px; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card img { width: 50px; margin-bottom: 15px; }
+
+        /* قسم الأهمية */
+        .importance { display: flex; padding: 60px 8%; background: #fff; align-items: center; gap: 50px; }
+        .importance-list { list-style: none; padding: 0; }
+        .importance-list li { margin-bottom: 15px; color: var(--text-gray); display: flex; align-items: center; }
+        .importance-list li::before { content: "●"; color: var(--main-blue); margin-left: 10px; font-size: 12px; }
+
+        /* قسم كيف يعمل الجهاز */
+        .steps { background: var(--bg-light); padding: 60px 8%; }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .step-card { background: white; padding: 25px; border-radius: 15px; text-align: center; position: relative; }
+        .step-num { position: absolute; top: 10px; left: 10px; background: #eef4ff; color: var(--main-blue); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+
+        /* الفوتر الداكن */
+        footer { background: var(--dark-blue); color: white; padding: 40px 8%; text-align: center; margin-top: 50px; border-radius: 20px 20px 0 0; }
+        .footer-cta { margin-bottom: 30px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><span>—^—</span> BP Smart</div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#">عن الجهاز</a>
+            <a href="#">المميزات</a>
+            <a href="#">كيف يعمل؟</a>
+            <a href="#">تواصل معنا</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>قياس أدق.. متابعة أسهل.. صحة أفضل</h1>
+            <p>جهاز قياس ضغط الدم المطور<br>تقنية حديثة تمنحك قراءات دقيقة، تجربة مريحة، ومتابعة ذكية لضغط دمك في أي وقت.</p>
+            <button class="btn-blue">تعرف على الجهاز</button>
+        </div>
+        <div class="hero-image">
+            <img src="menna.jpg" alt="Blood Pressure Monitor">
+        </div>
+    </section>
+    <div class="about-device" style="text-align: center; padding: 40px 15%;">
+        <h2 class="section-title">عن الجهاز</h2>
+        <p style="color: var(--text-gray); line-height: 1.8;">جهاز قياس ضغط الدم المطور هو جهاز إلكتروني ذكي صمم لقياس ضغط الدم ومعدل نبضات القلب بدقة عالية، مع تحسين تجربة المستخدم من خلال شاشة واضحة وتقنيات متقدمة وإمكانيات ذكية للمراقبة والتخزين.</p>
+    </div>
+
+    <section class="grid-container">
+        <div class="card"><h3>استخدام مريح</h3><p>تصميم مريح وسهل الاستخدام للفئات</p></div>
+        <div class="card"><h3>ذاكرة ذكية</h3><p>حفظ القراءات وتتبع التغيرات مع الوقت</p></div>
+        <div class="card"><h3>شاشة واضحة</h3><p>عرض رقمي كبير وسهل القراءة</p></div>
+        <div class="card"><h3>دقة عالية</h3><p>تقنية متطورة لضمان قراءات دقيقة وموثوقة</p></div>
+    </section>
+
+    <section class="importance">
+        <div class="hero-image"><img src="image.jpg" alt="Device Importance"></div>
+        <div class="hero-text">
+            <h2 class="section-title" style="text-align: right;">أهمية الجهاز</h2>
+            <ul class="importance-list">
+                <li>يساعد على الاكتشاف المبكر لارتفاع ضغط الدم.</li>
+                <li>يدعم المرضى في متابعة حالتهم بانتظام.</li>
+                <li>يقلل الحاجة للزيارات المتكررة للطبيب.</li>
+                <li>يساهم في الوقاية من المضاعفات الصحية الخطيرة مثل أمراض القلب والسكتة الدماغية.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="steps">
+        <h2 class="section-title">كيف يعمل الجهاز؟</h2>
+        <div class="steps-grid">
+            <div class="step-card"><span class="step-num">1</span><h3>لف الكفة</h3><p>يرتدي المستخدم الكفة بشكل صحيح حول الذراع</p></div>
+            <div class="step-card"><span class="step-num">2</span><h3>بدء القياس</h3><p>يتم الضغط على زر البداية لبدء عملية القياس</p></div>
+            <div class="step-card"><span class="step-num">3</span><h3>تحليل البيانات</h3><p>يقوم الجهاز بتحليل نبضات الدم وحساب الضغط ومعدل النبض</p></div>
+            <div class="step-card"><span class="step-num">4</span><h3>عرض وحفظ النتائج</h3><p>تعرض القراءة على الشاشة وتحفظ في ذاكرة الجهاز للمتابعة</p></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-cta">
+            <h3>صحة أفضل تبدأ بقياس أدق!</h3>
+            <p>اختر الجهاز المطور لقياس ضغط الدم وكن دائماً على اطلاع بحالتك الصحية</p>
+            <button class="btn-blue">تواصل معنا الآن</button>
+        </div>
+        <p>© 2026 BP Smart - جميع الحقوق محفوظة</p>
+    </footer>
+
+</body>
+</html>
